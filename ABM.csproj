@@ -67,16 +67,64 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AltaCliente.aspx" />
+    <Content Include="AltaCobranza.aspx" />
+    <Content Include="EliminarCliente.aspx" />
+    <Content Include="EliminarCobranza.aspx" />
+    <Content Include="GrillaCobranzas.aspx" />
     <Content Include="Index.aspx" />
+    <Content Include="ModificarCliente.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaCliente.aspx.cs">
+      <DependentUpon>AltaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaCliente.aspx.designer.cs">
+      <DependentUpon>AltaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltaCobranza.aspx.cs">
+      <DependentUpon>AltaCobranza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaCobranza.aspx.designer.cs">
+      <DependentUpon>AltaCobranza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarCliente.aspx.cs">
+      <DependentUpon>EliminarCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarCliente.aspx.designer.cs">
+      <DependentUpon>EliminarCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarCobranza.aspx.cs">
+      <DependentUpon>EliminarCobranza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarCobranza.aspx.designer.cs">
+      <DependentUpon>EliminarCobranza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GrillaCobranzas.aspx.cs">
+      <DependentUpon>GrillaCobranzas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GrillaCobranzas.aspx.designer.cs">
+      <DependentUpon>GrillaCobranzas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarCliente.aspx.cs">
+      <DependentUpon>ModificarCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarCliente.aspx.designer.cs">
+      <DependentUpon>ModificarCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
