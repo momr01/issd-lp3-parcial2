@@ -57,3 +57,5 @@ C:\Users\maxio\Downloads\ABM\obj\Debug\ABM.csproj.CoreCompileInputs.cache
 C:\Users\maxio\Downloads\ABM\obj\Debug\ABM.csproj.CopyComplete
 C:\Users\maxio\Downloads\ABM\obj\Debug\ABM.dll
 C:\Users\maxio\Downloads\ABM\obj\Debug\ABM.pdb
+C:\Users\maxio\Downloads\ABM\obj\Debug\ABM.Properties.Resources.resources
+C:\Users\maxio\Downloads\ABM\obj\Debug\ABM.csproj.GenerateResource.cache
