@@ -1,0 +1,16 @@
+CREATE DATABASE IssdTP42023;
+
+USE IssdTP42023;
+
+CREATE TABLE Clientes (
+    id int IDENTITY(1,1) PRIMARY KEY,
+    apellido varchar(50) NOT NULL,
+    nombre varchar(50) NOT NULL
+);
+
+CREATE TABLE Cobranzas (
+    id int IDENTITY(1,1) PRIMARY KEY,
+    fecha Date NOT NULL,
+    idCliente int NOT NULL FOREIGN KEY REFERENCES Clientes(id),
+    monto decimal(10,2) NOT NULL
+);
