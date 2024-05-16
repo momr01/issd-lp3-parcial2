@@ -35,7 +35,7 @@
             <asp:Label ID="Resultado" runat="server" Text=""></asp:Label>
             <asp:SqlDataSource ID="SqlDataSourceClientes" runat="server" ConnectionString="<%$ ConnectionStrings:IssdTP42023ConnectionString %>" SelectCommand="SELECT id, nombre, apellido FROM clientes">
             </asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDataSourceCobranzas" runat="server" ConnectionString="<%$ ConnectionStrings:IssdTP42023ConnectionString %>" InsertCommand="INSERT INTO cobranzas(fecha, idCliente, monto) VALUES (@fecha, @idCliente, @monto)" SelectCommand="SELECT * FROM [Cobranzas]">
+            <asp:SqlDataSource ID="SqlDataSourceCobranzas" runat="server" ConnectionString="<%$ ConnectionStrings:IssdTP42023ConnectionString %>" InsertCommand="INSERT INTO cobranzas(fecha, idCliente, monto) VALUES (@fecha, @idCliente, @monto)" SelectCommand="SELECT * FROM [Cobranzas]" ProviderName="System.Data.SqlClient">
                 <InsertParameters>
                     <asp:Parameter Name="fecha" />
                     <asp:Parameter Name="idCliente" />

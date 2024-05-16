@@ -44,15 +44,23 @@ namespace ABM
 
         private void InsertarRegistro()
         {
-            this.SqlDataSourceCobranzas.InsertParameters["fecha"].DefaultValue = this.Fecha.Text;
+            try
+            {
+                this.SqlDataSourceCobranzas.InsertParameters["fecha"].DefaultValue = this.Fecha.Text;
 
-            this.SqlDataSourceCobranzas.InsertParameters["monto"].DefaultValue = this.Monto.Text;
+                this.SqlDataSourceCobranzas.InsertParameters["monto"].DefaultValue = decimal.Parse(this.Monto.Text).ToString();
 
-            this.SqlDataSourceCobranzas.InsertParameters["idCliente"].DefaultValue = this.Cliente.SelectedValue;
+                this.SqlDataSourceCobranzas.InsertParameters["idCliente"].DefaultValue = this.Cliente.SelectedValue;
 
-            this.SqlDataSourceCobranzas.Insert();
-            this.Resultado.Text = "Se efectuó la carga.";
-            this.Resultado.ForeColor = System.Drawing.Color.Black;
+                this.SqlDataSourceCobranzas.Insert();
+                this.Resultado.Text = "Se efectuó la carga.";
+                this.Resultado.ForeColor = System.Drawing.Color.Black;
+            } catch
+            {
+                this.Resultado.Text = "Por favor verifique los datos ingresados.";
+                this.Resultado.ForeColor = System.Drawing.Color.Red;
+            }
+            
 
         }
 
