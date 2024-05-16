@@ -78,6 +78,15 @@ namespace ABM
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
+        /// Control SqlDataSourceCobranzas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceCobranzas;
+
+        /// <summary>
         /// Control Label2.
         /// </summary>
         /// <remarks>
@@ -157,15 +166,6 @@ namespace ABM
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label ResultadoEdicion;
-
-        /// <summary>
-        /// Control SqlDataSourceCobranzas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceCobranzas;
 
         /// <summary>
         /// Control SqlDataSourceClientes.

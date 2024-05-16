@@ -30,7 +30,7 @@ namespace ABM
             this.ResultadoEdicion.Text = string.Empty;
 
             Fecha.Text = FormatearFecha(GridView1.SelectedRow.Cells[1].Text);
-            Monto.Text = GridView1.SelectedRow.Cells[2].Text;
+            Monto.Text = decimal.Parse(GridView1.SelectedRow.Cells[2].Text).ToString();
             ClientesEditar.SelectedValue = GridView1.SelectedRow.Cells[3].Text;
 
         }
@@ -66,15 +66,24 @@ namespace ABM
 
         private void EditarCobranza()
         {
-            this.SqlDataSourceCobranzas.UpdateParameters["fecha"].DefaultValue = this.Fecha.Text;
-            this.SqlDataSourceCobranzas.UpdateParameters["idCliente"].DefaultValue = this.ClientesEditar.SelectedValue;
-            this.SqlDataSourceCobranzas.UpdateParameters["monto"].DefaultValue = this.Monto.Text;
-            this.SqlDataSourceCobranzas.UpdateParameters["id"].DefaultValue = GridView1.SelectedRow.Cells[0].Text;
+            try
+            {
+                this.SqlDataSourceCobranzas.UpdateParameters["fecha"].DefaultValue = this.Fecha.Text;
+                this.SqlDataSourceCobranzas.UpdateParameters["idCliente"].DefaultValue = this.ClientesEditar.SelectedValue;
+                this.SqlDataSourceCobranzas.UpdateParameters["monto"].DefaultValue = decimal.Parse(this.Monto.Text).ToString();
+                this.SqlDataSourceCobranzas.UpdateParameters["id"].DefaultValue = GridView1.SelectedRow.Cells[0].Text;
 
-            int cant;
-            cant = this.SqlDataSourceCobranzas.Update();
-            if (cant == 1) this.ResultadoEdicion.Text = "Se modificó la cobranza";
-            else this.ResultadoEdicion.Text = "No fue posible modificar la cobranza";
+                int cant;
+                cant = this.SqlDataSourceCobranzas.Update();
+                if (cant == 1) this.ResultadoEdicion.Text = "Se modificó la cobranza";
+                else this.ResultadoEdicion.Text = "No fue posible modificar la cobranza";
+            } catch
+            {
+                this.ResultadoEdicion.Text = "No fue posible modificar la cobranza";
+            }
+            
+
+           
         }
 
         private bool VerificarCampos()
@@ -87,8 +96,11 @@ namespace ABM
             {
                 return false;
             }
+           
 
             return true;
+
+           
         }
 
         private void LimpiarControles()
