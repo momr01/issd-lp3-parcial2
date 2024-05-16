@@ -75,21 +75,29 @@ namespace ABM
 
         private void Eliminar()
         {
-            this.SqlDataSourceCobranzas.DeleteParameters["id"].DefaultValue = this.Id.Text;
-
-            int cant;
-            cant = this.SqlDataSourceCobranzas.Delete();
-            if (cant == 1)
+            try
             {
-                this.ResultadoEliminar.Text = "Se borró la cobranza exitosamente.";
-                this.ResultadoEliminar.ForeColor = System.Drawing.Color.Blue;
-            }
+                this.SqlDataSourceCobranzas.DeleteParameters["id"].DefaultValue = this.Id.Text;
 
-            else
+                int cant;
+                cant = this.SqlDataSourceCobranzas.Delete();
+                if (cant == 1)
+                {
+                    this.ResultadoEliminar.Text = "Se borró la cobranza exitosamente.";
+                    this.ResultadoEliminar.ForeColor = System.Drawing.Color.Blue;
+                }
+
+                else
+                {
+                    this.ResultadoEliminar.Text = "No fue posible borrar la cobranza.";
+                    this.ResultadoEliminar.ForeColor = System.Drawing.Color.Black;
+                }
+            } catch
             {
                 this.ResultadoEliminar.Text = "No fue posible borrar la cobranza.";
                 this.ResultadoEliminar.ForeColor = System.Drawing.Color.Black;
             }
+           
 
         }
 
